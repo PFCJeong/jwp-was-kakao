@@ -17,7 +17,7 @@
 ####
 * Controller 구현 []
     * BaseController 구현 [x]
-    * HomeController 구현 []
+    * HomeController 구현 [x]
     * UserController 구현 []
     * Controllers 구현 [x]
 ####
@@ -26,7 +26,7 @@
 ####
 * 요구 사항 구현 []
   * 1단계 구현 [x]
-  * 2단계 구현 []
+  * 2단계 구현 [x]
   * 3단계 구현 []
   * 4단계 구현 []
   * 5단계 구현 []

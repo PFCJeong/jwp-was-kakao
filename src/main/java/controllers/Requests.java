@@ -14,6 +14,7 @@ public class Requests {
             new HttpRequest(HttpMethod.GET, "/user/login.html"),
             new HttpRequest(HttpMethod.GET, "/user/login_failed.html"),
             new HttpRequest(HttpMethod.GET, "/user/profile.html"),
+            new HttpRequest(HttpMethod.GET, "/user/create"),
             new HttpRequest(HttpMethod.POST, "/user/create")
     };
 }
