@@ -1,6 +1,7 @@
 package http;
 
 import org.springframework.http.HttpMethod;
+import utils.HttpUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,8 +54,6 @@ public class HttpRequest {
         if(parsedUri.length < 2) {
             return;
         }
-        for(String param : parsedUri[1].split("&")) {
-            params.put(param.split("=")[0], param.split("=")[1]);
-        }
+        this.params = HttpUtils.getParamMap(parsedUri[1]);
     }
 }
