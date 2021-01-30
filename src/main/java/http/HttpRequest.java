@@ -8,6 +8,11 @@ public class HttpRequest {
     private HttpRequestHeaders httpRequestHeaders;
     private String body;
 
+    public HttpRequest(HttpMethod httpMethod, String uri) {
+        this.httpMethod = httpMethod;
+        this.uri = uri;
+    }
+
     public HttpRequest(HttpMethod httpMethod, String uri, HttpRequestHeaders httpRequestHeaders, String body) {
         this.httpMethod = httpMethod;
         this.uri = uri;
@@ -31,4 +36,10 @@ public class HttpRequest {
         return body;
     }
 
+    public boolean hasSameRequestLine(HttpRequest request) {
+        if(httpMethod == request.httpMethod && uri.equals(request.uri)) {
+            return true;
+        }
+        return false;
+    }
 }
