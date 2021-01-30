@@ -7,3 +7,18 @@
 
 ## 온라인 코드 리뷰 과정
 * [텍스트와 이미지로 살펴보는 온라인 코드 리뷰 과정](https://github.com/next-step/nextstep-docs/tree/master/codereview)
+
+## todo
+* HttpRequest 구현
+    * HttpMethod 구현
+    * HttpRequestHeader 구현
+    * HttpRequestHeaders 구현
+    * HttpRequestParser 구현
+    
+* Controller 구현
+    * BaseController 구현
+    * HomeController 구현
+    * UserController 구현
+    * Controllers 구현
+    
+  
