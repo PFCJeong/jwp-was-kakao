@@ -31,11 +31,10 @@ public class UserController extends Controller {
 
     private void handleRegistration(HttpRequest request, DataOutputStream dos) {
         Map<String, String> params = HttpUtils.getParamMap(request.getBody());
-
-        User user =
-                new User(params.get("userId"), params.get("password"), params.get("name"), params.get("email"));
+        User user = new User(params.get("userId"), params.get("password"), params.get("name"), params.get("email"));
         DataBase.addUser(user);
-        System.out.println(user);
+
+        responseRedirectedHtml(dos, "/index.html");
     }
 
 }
