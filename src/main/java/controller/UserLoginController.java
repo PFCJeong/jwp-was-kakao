@@ -5,6 +5,7 @@ import db.DataBase;
 import model.User;
 import utils.HttpUtils;
 import webserver.Controller;
+import webserver.Model;
 import webserver.http.HttpRequest;
 import webserver.http.HttpResponse;
 
@@ -21,21 +22,15 @@ public class UserLoginController extends Controller {
     }
 
     @Override
-    public HttpResponse handleRequest(HttpRequest request) {
+    public String handleRequest(HttpRequest request, HttpResponse httpResponse, Model model) {
         Map<String, String> params = HttpUtils.getParamMap(request.getBody());
 
         User user = DataBase.findUserById(params.get("userId"));
         if (user != null && user.getPassword().equals(params.get("password"))) {
-            return new HttpResponse.Builder()
-                    .status("HTTP/1.1 302 Found")
-                    .redirect("/index.html")
-                    .header("Set-Cookie", "logined=true; Path=/")
-                    .build();
+            httpResponse.addCookie("logined=true; Path=/");
+            return "redirect:/index.html";
         }
-        return new HttpResponse.Builder()
-                .status("HTTP/1.1 302 Found")
-                .redirect("/user/login_failed.html")
-                .header("Set-Cookie", "logined=false; Path=/")
-                .build();
+        httpResponse.addCookie("logined=false; Path=/");
+        return "redirect:/user/login_failed.html";
     }
 }
