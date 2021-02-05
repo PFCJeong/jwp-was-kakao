@@ -31,8 +31,8 @@ public class HttpResponse {
         headers.put(key, value);
     }
 
-    public void addCookie(String cookie) {
-        headers.put("Set-Cookie", cookie);
+    public void addCookie(String name, String content) {
+        headers.put("Set-Cookie", name + "=" + content);
     }
 
     public void sendResponse(DataOutputStream dos) {
